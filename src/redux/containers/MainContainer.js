@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
   increment: () => dispatch(actions.increment()),
   decrement: () => dispatch(actions.decrement()),
   add_monster: (monster) => dispatch(actions.add_monster(monster)),
+  set_amount: (monster) => dispatch(actions.set_amount(monster)),
 });
 
 class MainContainer extends Component {
@@ -34,8 +35,14 @@ class MainContainer extends Component {
 
   render() {
     // destructured from State and Dispatch to props
-    const { count, monsterList, increment, decrement, add_monster } =
-      this.props;
+    const {
+      count,
+      monsterList,
+      increment,
+      decrement,
+      add_monster,
+      set_amount,
+    } = this.props;
 
     return (
       <div>
@@ -58,6 +65,7 @@ class MainContainer extends Component {
                 key={monster.id}
                 id={monster.id}
                 hp={monster.hp}
+                set_amount={set_amount}
               />
             );
           })}

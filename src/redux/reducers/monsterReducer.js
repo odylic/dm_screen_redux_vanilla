@@ -10,8 +10,6 @@ const monsterReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case actionTypes.ADD_MONSTER: {
-      console.log(state.monsterList);
-
       // copy the monsterList
       monsterList = state.monsterList.slice();
       // push the payload into monsterList
@@ -22,6 +20,14 @@ const monsterReducer = (state = initialState, action) => {
         ...state,
         monsterList,
       };
+    }
+    case actionTypes.SET_AMOUNT: {
+      state.monsterList.map((monster) => {
+        if (monster.id === action.payload.input.id) {
+          monster.hp = action.payload.input.hp;
+        }
+        console.log(monster.hp);
+      });
     }
 
     default: {

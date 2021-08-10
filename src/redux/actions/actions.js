@@ -17,3 +17,10 @@ export const add_monster = () => ({
     id: Date.now(),
   },
 });
+
+export const set_amount = (input) => ({
+  type: actionTypes.SET_AMOUNT,
+  payload: {
+    input,
+  },
+});
