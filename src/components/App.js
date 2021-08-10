@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.scss";
 import store from "../redux/store/store";
 import { Provider } from "react-redux";
+import MainContainer from "../redux/containers/MainContainer";
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">Test</div>
+        <MainContainer />
       </Provider>
     );
   }

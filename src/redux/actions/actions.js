@@ -9,3 +9,11 @@ export const increment = () => ({
 export const decrement = () => ({
   type: actionTypes.DECREMENT,
 });
+
+export const add_monster = () => ({
+  type: actionTypes.ADD_MONSTER,
+  payload: {
+    hp: 0,
+    id: Date.now(),
+  },
+});
